@@ -12,10 +12,14 @@ function ListItem(props) {
   
 function EmojiList(props) {
     const dataEmoji = props.dataEmoji;
-    const listItems = dataEmoji.map((emoji) =>
-      // Correct! Key should be specified inside the array.
-      <ListItem key={emoji.title.toString()} symbol={emoji.symbol} title={emoji.title} />
-    );
+    let listItems ;
+    if(dataEmoji.length === 0) {
+      listItems = <p>Nothings emoji that you want search</p>
+    } else {
+      listItems = dataEmoji.map((emoji) =>
+        <ListItem key={emoji.title.toString()} symbol={emoji.symbol} title={emoji.title} />
+      )
+    }
     return (
         <div className="List">
             <ul>
