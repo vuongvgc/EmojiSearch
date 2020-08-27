@@ -1,5 +1,5 @@
 import React from 'react';
-import './EmjiList.css'
+import './EmjiList.css';
 function ListItem(props) {
     // Correct! There is no need to specify the key here:
     return( <li className="List__item" >
@@ -15,7 +15,7 @@ function StatusError() {
 }
   
 function EmojiList(props) {
-    const dataEmoji = props.dataEmoji;
+    const dataEmoji = props.dataEmoji.slice(0,5);
     let listItems ;
     if(dataEmoji.length === 0) {
       listItems = <StatusError />
