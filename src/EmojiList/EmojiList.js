@@ -14,22 +14,25 @@ function StatusError() {
   )
 }
   
-function EmojiList(props) {
-    const dataEmoji = props.dataEmoji.slice(0,5);
-    let listItems ;
-    if(dataEmoji.length === 0) {
-      listItems = <StatusError />
-    } else {
-      listItems = dataEmoji.map((emoji) =>
-        <ListItem key={emoji.title.toString()} symbol={emoji.symbol} title={emoji.title} />
-      )
+class EmojiList extends React.Component {
+    render(){
+      let listItems ;
+      const dataEmoji = this.props.dataEmoji.slice(0,5);
+      if(dataEmoji.length === 0) {
+        listItems = <StatusError />
+      } else {
+        listItems = dataEmoji.map((emoji) =>
+          <ListItem key={emoji.title.toString()} symbol={emoji.symbol} title={emoji.title} />
+        )
+      }
+      return (
+          <div className="List">
+              <ul>
+              {listItems}
+              </ul>
+          </div>
+      );
     }
-    return (
-        <div className="List">
-            <ul>
-            {listItems}
-            </ul>
-        </div>
-    );
-  }
+    }
+    
 export default EmojiList;

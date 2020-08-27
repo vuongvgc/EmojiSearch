@@ -1,8 +1,10 @@
 .Input__text {
-    margin: 25px 0;
-    height: 20%;
+    width: 95%;
+    margin: 25px auto;
+
 }
 .Input__text input {
     width: 100%;
-    height: 30px;
+    font-size: 30px;
+    height: 50px;
 }

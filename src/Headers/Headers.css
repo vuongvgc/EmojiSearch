@@ -1,6 +1,7 @@
 .Header__text {
-    
+    text-align: center;
 }
 h1 {
-    color: pink;
+    font-weight: 500;
+    font-size: 60px;
 }

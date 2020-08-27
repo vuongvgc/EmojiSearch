@@ -4,9 +4,11 @@ class Headers extends React.Component {
     render() {
         return (
             <header className="Header__text">
-                <h1>Emoji Search</h1>
+                <h1>{logoIcon.symbol}Emoji Search{logoIcon.symbol}</h1>
             </header>
         )
     }
 }
+const logoIcon ={   "title": "Heartbeat",
+                    "symbol": "💓"}
 export default Headers;
