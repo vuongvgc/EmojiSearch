@@ -18,7 +18,8 @@ class App extends React.Component  {
   }
   handleInput = (event) => {
     const inputText = this.state.inputText;
-    let dataFillter = dataEmoji.filter((emoji) => emoji.keywords.search(inputText) !== -1)
+    let dataFillter = dataEmoji.filter((emoji) => 
+    (emoji.keywords.search(inputText) !== -1 || emoji.title.search(inputText) !== -1 ))
     if(event.charCode === 13) {
       this.setState({
         inputText: '',

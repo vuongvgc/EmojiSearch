@@ -8,13 +8,17 @@ function ListItem(props) {
             </li>
     )
 }
-
+function StatusError() {
+  return(
+    <p>Nothings emoji that you want search</p>
+  )
+}
   
 function EmojiList(props) {
     const dataEmoji = props.dataEmoji;
     let listItems ;
     if(dataEmoji.length === 0) {
-      listItems = <p>Nothings emoji that you want search</p>
+      listItems = <StatusError />
     } else {
       listItems = dataEmoji.map((emoji) =>
         <ListItem key={emoji.title.toString()} symbol={emoji.symbol} title={emoji.title} />
