@@ -9,7 +9,8 @@ class App extends React.Component  {
     super();
     this.state = {
       inputText: '',
-      dataEmoji: dataEmoji 
+      dataEmoji: dataEmoji,
+      currentPage: 1, 
     }
   }
   inputChange = (event) => {
@@ -24,9 +25,22 @@ class App extends React.Component  {
     if(event.charCode === 13) {
       this.setState({
         inputText: '',
-        dataEmoji: dataFillter
+        dataEmoji: dataFillter,
+        currentPage: 1
       })
     }
+  }
+  changePage = (event) => {
+    let currentPage;
+    const oldPage = this.state.currentPage;
+    if(event.target.value === 'pre') {
+      currentPage = oldPage - 1;
+    }else if(event.target.value === 'next'){
+      currentPage = oldPage +  1;
+    }
+    this.setState({
+      currentPage: currentPage
+    })
   }
   render() {
     const dataEmoji = this.state.dataEmoji;
@@ -35,7 +49,7 @@ class App extends React.Component  {
       <div className="App">
         <Headers />
         <InputSearch  value={inputText} inputChange={this.inputChange} handleInput={this.handleInput}/>
-        <EmojiList dataEmoji={dataEmoji}/>
+        <EmojiList dataEmoji={dataEmoji} currentPage={this.state.currentPage} changePage={this.changePage}/>
       </div>
     );
   }

@@ -18,7 +18,8 @@ class EmojiList extends React.Component {
     render(){
       let listItems ;
       let dataEmoji = this.props.dataEmoji;
-      const rangeList = caculatorPage(dataEmoji,1,2);
+      let currentPage = this.props.currentPage;
+      const rangeList = caculatorPage(dataEmoji,currentPage,5);
       dataEmoji = dataEmoji.slice(rangeList.min, rangeList.max)
       if(dataEmoji.length === 0) {
         listItems = <StatusError />
@@ -29,9 +30,15 @@ class EmojiList extends React.Component {
       }
       return (
           <div className="List">
-              <ul>
-              {listItems}
-              </ul>
+              <div>
+                <ul>
+                {listItems}
+                </ul>
+              </div>
+              <div>
+                <button value="pre" onClick={this.props.changePage}>Pre</button>
+                <button value="next" onClick={this.props.changePage}>Next</button>
+              </div>
           </div>
       );
     }
