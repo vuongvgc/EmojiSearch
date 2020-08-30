@@ -17,7 +17,9 @@ function StatusError() {
 class EmojiList extends React.Component {
     render(){
       let listItems ;
-      const dataEmoji = this.props.dataEmoji.slice(0,5);
+      let dataEmoji = this.props.dataEmoji;
+      const rangeList = caculatorPage(dataEmoji,1,2);
+      dataEmoji = dataEmoji.slice(rangeList.min, rangeList.max)
       if(dataEmoji.length === 0) {
         listItems = <StatusError />
       } else {
@@ -34,5 +36,14 @@ class EmojiList extends React.Component {
       );
     }
     }
-    
+function caculatorPage(list,pageCurrent,pageRange) {
+  let rangeList = {max: 0, min: 0}
+  const lengthItem = list.length;
+  let page = Math.ceil(lengthItem / pageRange);
+  if(1<= pageCurrent <= page){
+    rangeList.max = pageCurrent * pageRange;
+    rangeList.min = (pageCurrent - 1) * pageRange;
+  }
+  return rangeList;
+}  
 export default EmojiList;
