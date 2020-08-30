@@ -9,3 +9,10 @@
     font-size: 30px;
     height: 50px;
 }
+@media only screen and (max-width: 600px) {
+    .Input__text {
+        width: 90%;
+        margin: 15px auto;
+    
+    }
+  }

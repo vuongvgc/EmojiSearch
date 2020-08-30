@@ -1,0 +1,33 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+.information, .Code-example, .Author__Social {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+.Avatar {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.Author__name {
+    align-self: center;
+    color: #ff4d4d;
+}
+.icon__footer {
+    width: 30px;
+    color: #ff4d4d;
+}
+.Author__Social a {
+    margin-right: 20px;
+    color: #ff4d4d;
+    font-size: 40px;
+}
+@media only screen and (max-width: 600px) {
+    footer {
+        display: block;
+        text-align: center;
+    }
+  }

@@ -35,9 +35,9 @@ class EmojiList extends React.Component {
                 {listItems}
                 </ul>
               </div>
-              <div>
-                <button value="pre" onClick={this.props.changePage}>Pre</button>
-                <button value="next" onClick={this.props.changePage}>Next</button>
+              <div className="button___control">
+                <button className="button___text" value="pre" onClick={this.props.changePage}>Pre</button>
+                <button className="button___text" value="next" onClick={this.props.changePage}>Next</button>
               </div>
           </div>
       );

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Headers from './Headers/Headers';
+import Footers from './Footers/Footer';
 import InputSearch from './InputSearch/InputSearch';
 import EmojiList from './EmojiList/EmojiList';
 import EmojiDataJson from '../src/Resouces/EmojiList.json'
@@ -48,8 +49,15 @@ class App extends React.Component  {
     return (
       <div className="App">
         <Headers />
-        <InputSearch  value={inputText} inputChange={this.inputChange} handleInput={this.handleInput}/>
-        <EmojiList dataEmoji={dataEmoji} currentPage={this.state.currentPage} changePage={this.changePage}/>
+        <InputSearch  
+          value={inputText} 
+          inputChange={this.inputChange} 
+          handleInput={this.handleInput}/>
+        <EmojiList 
+          dataEmoji={dataEmoji} 
+          currentPage={this.state.currentPage} 
+          changePage={this.changePage}/>
+        <Footers />
       </div>
     );
   }
