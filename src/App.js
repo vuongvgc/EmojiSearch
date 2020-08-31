@@ -12,7 +12,7 @@ class App extends React.Component  {
       inputText: '',
       dataEmoji: dataEmoji,
       currentPage: 1,
-      status: 'Victor' 
+      status: '' 
     }
   }
   inputChange = (event) => {
