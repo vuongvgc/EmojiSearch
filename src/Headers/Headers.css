@@ -5,6 +5,11 @@ h1 {
     font-weight: 500;
     font-size: 60px;
 }
+.header__link:link, .header__link:visited {
+    text-decoration: none;
+    color: #ff4d4d;
+    transition: all .2s;
+}
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 40px;

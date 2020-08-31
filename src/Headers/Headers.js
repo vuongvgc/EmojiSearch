@@ -5,7 +5,7 @@ class Headers extends React.Component {
         const status = this.props.status
         return (
             <header className="Header__text">
-                <h1>{status}Emoji Search{status}</h1>
+                <h1>{status}<a className="header__link" href="https://emojisearchvictor.web.app/">Emoji Search</a>{status}</h1>
             </header>
         )
     }
