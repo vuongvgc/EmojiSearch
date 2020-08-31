@@ -11,7 +11,8 @@ class App extends React.Component  {
     this.state = {
       inputText: '',
       dataEmoji: dataEmoji,
-      currentPage: 1, 
+      currentPage: 1,
+      status: 'Victor' 
     }
   }
   inputChange = (event) => {
@@ -43,12 +44,18 @@ class App extends React.Component  {
       currentPage: currentPage
     })
   }
+  changeStatus = (status) => {
+    this.setState({
+      status: status
+    })
+  }
   render() {
     const dataEmoji = this.state.dataEmoji;
     const inputText = this.state.inputText;
     return (
       <div className="App">
-        <Headers />
+        <Headers 
+          status={this.state.status}/>
         <InputSearch  
           value={inputText} 
           inputChange={this.inputChange} 
@@ -56,7 +63,9 @@ class App extends React.Component  {
         <EmojiList 
           dataEmoji={dataEmoji} 
           currentPage={this.state.currentPage} 
-          changePage={this.changePage}/>
+          changePage={this.changePage}
+          statusHandle={this.changeStatus}
+          />
         <Footers />
       </div>
     );

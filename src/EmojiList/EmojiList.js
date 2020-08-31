@@ -2,7 +2,7 @@ import React from 'react';
 import './EmjiList.css';
 function ListItem(props) {
     // Correct! There is no need to specify the key here:
-    return( <li className="List__item" >
+    return( <li className="List__item" onClick={() => props.statusHandle(props.symbol)}>
                 <p className="List__item-icon">{props.symbol}</p>
                 <p className="List__item-text">{props.title}</p>
             </li>
@@ -25,7 +25,12 @@ class EmojiList extends React.Component {
         listItems = <StatusError />
       } else {
         listItems = dataEmoji.map((emoji) =>
-          <ListItem key={emoji.title.toString()} symbol={emoji.symbol} title={emoji.title} />
+          <ListItem 
+            key={emoji.title.toString()} 
+            symbol={emoji.symbol} 
+            title={emoji.title}
+            statusHandle={(status) => this.props.statusHandle(status)}
+            />
         )
       }
       return (

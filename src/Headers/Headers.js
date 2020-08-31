@@ -2,13 +2,12 @@ import React from 'react';
 import './Headers.css';
 class Headers extends React.Component {
     render() {
+        const status = this.props.status
         return (
             <header className="Header__text">
-                <h1>{logoIcon.symbol}Emoji Search{logoIcon.symbol}</h1>
+                <h1>{status}Emoji Search{status}</h1>
             </header>
         )
     }
 }
-const logoIcon ={   "title": "Heartbeat",
-                    "symbol": "💓"}
 export default Headers;
